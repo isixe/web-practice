@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.domain + iframe</title>
+</head>
+
+<body>
+    <div>sub.example.com</div>
+
+    <script>
+        document.domain = 'example.com';
+        var sharedVariable = 'Hello from sub.example.com';
+    </script>
+</body>
+
+</html>

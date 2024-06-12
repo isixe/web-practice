@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.domain + iframe</title>
+</head>
+
+<body>
+    <div id="container"></div>
+    <iframe src="http://sub.example.com/sub.html" id="subFrame"></iframe>
+    <script>
+        const container = document.querySelector("#container")
+        container.innerText = location.host;
+        document.domain = 'example.com';
+
+        window.onload = function () {
+            const iframe = document.getElementById('subFrame').contentWindow;
+            alert(iframe.sharedVariable);
+        }
+    </script>
+</body>
+
+</html>

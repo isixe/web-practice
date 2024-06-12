@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.domain + iframe</title>
+</head>
+
+<body>
+    <div>http://localhost:3001</div>
+    <iframe src="http://localhost:3000/sub.html" id="subFrame"></iframe>
+    <script>
+        document.domain = 'localhost';
+
+        window.onload = function () {
+            const iframe = document.getElementById('subFrame').contentWindow;
+            alert(iframe.sharedVariable);
+        }
+    </script>
+</body>
+
+</html>

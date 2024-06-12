@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.domain + iframe</title>
+</head>
+
+<body>
+    <div>http://localhost:3000</div>
+
+    <script>
+        document.domain = 'localhost';
+        var sharedVariable = 'Hello from port 3000';
+    </script>
+</body>
+
+</html>
