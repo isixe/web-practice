@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.name + iframe</title>
+</head>
+
+<body>
+    <div>http://localhost:3000/root.html</div>
+    <iframe src="http://localhost:3001/sub.html"></iframe>
+    <script>
+        window.onload = function () {
+            const ifr = document.querySelector("iframe");
+            // sub-page of the same domain name, such as ifr.src = "http://localhost:3000";
+            // or
+            ifr.src = "about:blank";
+            ifr.onload = function () {
+                alert(ifr.contentWindow.name);
+            }
+        }
+    </script>
+</body>
+
+</html>
