@@ -13,7 +13,13 @@ const filepath = path.resolve(__dirname, "./");
 // First server
 http
 	.createServer(function (req, res) {
-		fs.readFile(filepath + "/sub.html", function (err, data) {
+		fs.readFile(filepath + req.url, function (err, data) {
+			if (err) {
+				res.writeHead(404, { "Content-Type": "text/plain" });
+				res.end("File not found");
+				return;
+			}
+
 			res.setHeader("Origin-Agent-Cluster", "?0");
 			res.write(data);
 			res.end();
@@ -26,7 +32,13 @@ http
 // Second server
 http
 	.createServer(function (req, res) {
-		fs.readFile(filepath + "/root.html", function (err, data) {
+		fs.readFile(filepath + req.url, function (err, data) {
+			if (err) {
+				res.writeHead(404, { "Content-Type": "text/plain" });
+				res.end("File not found");
+				return;
+			}
+
 			res.setHeader("Origin-Agent-Cluster", "?0");
 			res.write(data);
 			res.end();
