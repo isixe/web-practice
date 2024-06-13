@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location.hash + iframe</title>
+</head>
+
+<body>
+    <div>http://localhost:3000/root.html</div>
+    <iframe src="http://localhost:3001/sub.html"></iframe>
+    <script>
+        function callback(hashStr) {
+            alert(`get DOM data from localhost:3000's inner iframe: ${hashStr}`);
+        }
+    </script>
+</body>
+
+</html>
