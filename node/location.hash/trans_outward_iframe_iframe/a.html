@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inner iframe</title>
+</head>
+
+<body>
+    <div>localhost:3000/a.html</div>
+    <script>
+        const url = location.href;
+        setTimeout(() => {
+            window.parent.parent.callback(location.hash);
+        }, 0);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location.hash + iframe</title>
+</head>
+
+<body>
+    <div>http://localhost:3001/sub.html</div>
+
+    <script>
+        const hashStr = "#{data:'localhost:3001'}";
+        const hashWithUrl = "http://localhost:3000/a.html" + hashStr;
+        const ifr = document.createElement('iframe');
+        ifr.src = hashWithUrl;
+        document.body.appendChild(ifr);
+    </script>
+</body>
+
+</html>
