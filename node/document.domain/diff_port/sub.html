@@ -9,14 +9,10 @@
 
 <body>
     <div>http://localhost:3001</div>
-    <iframe src="http://localhost:3000/sub.html" id="subFrame"></iframe>
+
     <script>
         document.domain = 'localhost';
-
-        window.onload = function () {
-            const iframe = document.getElementById('subFrame').contentWindow;
-            alert(iframe.sharedVariable);
-        }
+        var sharedVariable = 'Hello from port 3001';
     </script>
 </body>
 
