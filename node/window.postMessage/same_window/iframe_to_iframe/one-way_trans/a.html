@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>localhost:3000/a.html</div>
+    <script>
+        window.onload = () => {
+            const data = { data: "localhost:3000/a.html" }
+            const origin = "http://localhost:3001";
+            const targetWindow = window.parent.frames[1];
+            targetWindow.postMessage(data, origin);
+        }
+    </script>
+</body>
+
+</html>

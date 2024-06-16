@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otherWindow.postMessage + iframe</title>
+</head>
+
+<body>
+    <div>http://localhost:3001/sub.html</div>
+    receive message:<div id="message"></div>
+    <script>
+        window.addEventListener("message", (e) => {
+            const message = document.querySelector("#message");
+            message.innerText = `from: ${e.origin},\ndata: ${e.data.data}`;
+        })
+
+        window.onload = () => {
+            const data = { data: "localhost:3001/sub.html" }
+            const origin = "http://localhost:3000";
+            const targetWindow = window.parent.frames[0];
+            targetWindow.postMessage(data, origin);
+        }
+    </script>
+</body>
+
+</html>

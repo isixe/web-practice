@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.postMessage</title>
+</head>
+
+<body>
+    <div>http://localhost:3000/root.html</div>
+
+    <script>
+        const msg = { data: 'localhost:3000' }
+        const target = "http://localhost:3001/sub.html";
+        const targetWindow = window.open(target, "_blank");
+        setTimeout(() => {
+            targetWindow.postMessage(msg, target);
+        }, 1500);
+
+        window.addEventListener("message", (e) => {
+            alert(`message from: ${e.origin},\ndata: ${e.data.data}`);
+        })
+    </script>
+</body>
+
+</html>
