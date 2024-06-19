@@ -24,7 +24,7 @@ const readFileAndRespond = (req, res) => {
 const writeJSONAndRespond = (req, res) => {
 	const { pathname, query } = url.parse(req.url, true);
 
-	if (pathname !== "/getData" || req.method !== "GET") {
+	if (pathname !== "/api/getData" || req.method !== "GET") {
 		res.writeHead(400, { "Content-Type": "text/plain" });
 		res.end("Error: No API provided.");
 		return;
@@ -63,7 +63,7 @@ const createApiServer = (hostname, port) => {
 	});
 
 	server.listen(port, hostname, () => {
-		console.log(`API server running at http://${hostname}:${port}/getData`);
+		console.log(`API server running at http://${hostname}:${port}/api/getData`);
 	});
 };
 
