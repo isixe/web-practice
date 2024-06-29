@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS-Simple Request</title>
+</head>
+
+<body>
+    <div>localhost:3000, please check the console for the API request</div>
+    <script>
+        window.onload = () => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://localhost:3001/api/getData', true);
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
