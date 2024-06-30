@@ -1,0 +1,19 @@
+{
+	"name": "forward_proxy",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "webpack-dev-server",
+		"build": "webpack"
+	},
+	"keywords": [
+		"proxy"
+	],
+	"author": "isixe",
+	"license": "MIT",
+	"description": "forward proxy example for webpack",
+	"devDependencies": {
+		"webpack": "^5.92.1",
+		"webpack-cli": "^5.1.4",
+		"webpack-dev-server": "^5.0.4"
+	}
+}
