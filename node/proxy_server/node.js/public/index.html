@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CORS-Simple Request</title>
+    <title>Proxy server by Node.js</title>
 </head>
 
 <body>
-    <div>localhost:3000, please check the console for the API request</div>
+    <div>127.0.0.1:3000</div>
     <script>
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://localhost:3001/api/getData', true);
+        xhr.open('PUT', '/api/updateData', true);
         xhr.send();
     </script>
 </body>

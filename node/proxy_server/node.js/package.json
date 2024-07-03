@@ -1,0 +1,20 @@
+{
+	"name": "node.js",
+	"version": "1.0.0",
+	"description": "proxy server for node.js",
+	"main": "server.js",
+	"scripts": {
+		"dev": "node server.js"
+	},
+	"keywords": [
+		"proxy"
+	],
+	"author": "isixe",
+	"license": "MIT",
+	"devDependencies": {
+		"express": "^4.19.2"
+	},
+	"dependencies": {
+		"http-proxy-middleware": "^3.0.0"
+	}
+}

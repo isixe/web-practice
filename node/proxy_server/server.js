@@ -4,6 +4,7 @@ const url = require("url");
 // Write JSON data and response
 const writeJSONAndRespond = (req, res) => {
 	const { pathname } = url.parse(req.url, true);
+	console.log(req.url);
 
 	if (pathname !== "/api/updateData" || req.method !== "PUT") {
 		res.writeHead(400, { "Content-Type": "text/plain" });
