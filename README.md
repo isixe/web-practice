@@ -10,6 +10,7 @@
 - [子域名间的跨源](https://github.com/isixe/web-practice/tree/main/browser/document.domain/diff_domain_sub_sub)
 
 [window.name + iframe](https://github.com/isixe/web-practice/tree/main/browser/window.name)
+
 [location.hash + iframe](https://github.com/isixe/web-practice/tree/main/browser/location.hash)
 - 向内传递
     - [src 传递](https://github.com/isixe/web-practice/tree/main/browser/location.hash/trans_inward_src)
