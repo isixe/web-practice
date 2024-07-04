@@ -4,7 +4,7 @@
 	"description": "proxy server for node.js",
 	"main": "server.js",
 	"scripts": {
-		"dev": "node server.js"
+		"dev": "node proxyServer.js"
 	},
 	"keywords": [
 		"proxy"
