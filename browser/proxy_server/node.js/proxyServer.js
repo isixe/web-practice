@@ -5,7 +5,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 const serverConf = {
 	HOST: "127.0.0.1",
 	PORT: 3000,
-	TARGET: "http://localhost:7000",
+	TARGET: "http://localhost:8080",
 };
 
 const { HOST, PORT, TARGET } = serverConf;

@@ -66,7 +66,7 @@ const createApiServer = (hostname, port) => {
 // Server
 createServer("localhost", 3000, "index.html");
 // API server
-createApiServer("localhost", 3001);
+createApiServer("localhost", 8080);
 
 // Start
 const childProcess = require("child_process");

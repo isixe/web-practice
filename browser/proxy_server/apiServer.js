@@ -29,4 +29,4 @@ const createApiServer = (hostname, port) => {
 };
 
 // API server
-createApiServer("localhost", 7000);
+createApiServer("localhost", 8080);

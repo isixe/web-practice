@@ -2,7 +2,7 @@
 	"name": "node.js",
 	"version": "1.0.0",
 	"description": "proxy server for node.js",
-	"main": "server.js",
+	"main": "proxyServer.js",
 	"scripts": {
 		"dev": "node proxyServer.js"
 	},
