@@ -1,0 +1,17 @@
+{
+	"name": "websocket",
+	"version": "1.0.0",
+	"description": "websocket request cross-origin",
+	"main": "server.js",
+	"scripts": {
+		"dev": "node server.js"
+	},
+	"keywords": [
+		"websocket"
+	],
+	"author": "isixe",
+	"license": "MIT",
+	"dependencies": {
+		"ws": "^8.18.0"
+	}
+}

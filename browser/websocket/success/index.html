@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>websocket cross-origin example</title>
+</head>
+
+<body>
+    <div>localhost:3000，please check the console for the API request</div>
+    <script>
+        const ws = new WebSocket("ws:localhost:8080");
+        ws.onopen = () => {
+            console.log('WebSocket connection establish.');
+            ws.send("Wesocket client request");
+        }
+        ws.onmessage = () => {
+            console.log('Receive the server message: ', event.data)
+            ws.close();
+        };
+        ws.onerror = () => console.error('WebSocket connection error: ', event)
+        ws.onclose = () => console.log('WebSocket connection close.');
+    </script>
+</body>
+
+</html>
