@@ -30,7 +30,7 @@ const writeJSONAndRespond = (req, res) => {
 		return;
 	}
 
-	const data = { message: "Hello, this is jsonp data!" };
+	const data = { message: "Hello, this is cors data!" };
 	const jsonData = JSON.stringify(data);
 
 	res.writeHead(200, { "Access-Control-Allow-Origin": "http://localhost:3000" });

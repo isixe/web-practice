@@ -12,7 +12,7 @@ const writeJSONAndRespond = (req, res) => {
 		return;
 	}
 
-	const data = { message: "Hello, this is jsonp data!" };
+	const data = { message: "Hello, this is proxy server data!" };
 	const jsonData = JSON.stringify(data);
 	res.end(jsonData);
 };

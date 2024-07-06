@@ -22,19 +22,27 @@ const readFileAndRespond = (req, res) => {
 
 // Write JSON data and response
 const writeJSONAndRespond = (req, res) => {
-	const { pathname } = url.parse(req.url, true);
+	const { pathname, query } = url.parse(req.url, true);
 
-	if (pathname !== "/api/updateData" || req.method !== "PUT") {
+	if (pathname !== "/api/getData" || req.method !== "GET") {
 		res.writeHead(400, { "Content-Type": "text/plain" });
 		res.end("Error: No API provided.");
 		return;
 	}
 
-	const data = { message: "Hello, this is cors data!" };
+	const data = { message: "Hello, this is jsonp data!" };
 	const jsonData = JSON.stringify(data);
+	const callback = query.callback;
 
-	res.writeHead(200, { "Access-Control-Allow-Origin": "http://localhost:3000" });
-	res.end(jsonData);
+	if (!callback) {
+		res.writeHead(200, { "Content-Type": "application/json" });
+		res.end(jsonData);
+		return;
+	}
+
+	const response = `${callback}(${jsonData});`;
+	res.writeHead(200, { "Content-Type": "text/javascript" });
+	res.end(response);
 };
 
 // Create server instance
@@ -55,7 +63,7 @@ const createApiServer = (hostname, port) => {
 	});
 
 	server.listen(port, hostname, () => {
-		console.log(`API server running at http://${hostname}:${port}/api/updateData`);
+		console.log(`API server running at http://${hostname}:${port}/api/getData`);
 	});
 };
 
