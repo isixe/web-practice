@@ -3,7 +3,7 @@
 
 ## 浏览器
 
-### 跨源方法
+### 跨源共享
 [document.domain + iframe](https://github.com/isixe/web-practice/tree/main/browser/document.domain)
 - [不同端口跨源通信](https://github.com/isixe/web-practice/tree/main/browser/document.domain/diff_port)
 - [父子域名跨源](https://github.com/isixe/web-practice/tree/main/browser/document.domain/diff_domain_sub_root)
@@ -46,4 +46,6 @@
 - [Node.js](https://github.com/isixe/web-practice/tree/main/browser/proxy_server/node.js)
 - [Nginx](https://github.com/isixe/web-practice/tree/main/browser/proxy_server/nginx)
 
-[Websocket]()
+[Websocket](https://github.com/isixe/web-practice/tree/main/browser/websocket)
+
+[Cookie 请求跨源](https://github.com/isixe/web-practice/tree/main/browser/cookie%20cross-origin%20sharing)
